@@ -40,7 +40,14 @@ class CollectionsTransformation {
     static int sumOfElements(List<Integer> input){
        return input.stream()
                .reduce(0,(e1,e2)->e1+e2);
-
     }
+
+    static List<String> getKidNames(List<Person> input){
+        return input.stream()
+                .filter(p->p.age<=18)
+                .map(Person::getName)
+                .collect(toList());
+    }
+
 
 }

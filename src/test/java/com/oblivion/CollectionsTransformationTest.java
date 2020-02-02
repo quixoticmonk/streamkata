@@ -1,11 +1,17 @@
 package com.oblivion;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Test;
 
 import java.util.List;
 
+import static com.oblivion.CollectionsTransformation.getKidNames;
 import static com.oblivion.CollectionsTransformation.sumOfElements;
 import static java.util.Arrays.asList;
+import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
 
 public class CollectionsTransformationTest {
@@ -53,6 +59,17 @@ public class CollectionsTransformationTest {
     public void transformShouldConvertCollectionElementsToUpperCase() {
         List<Integer> numbers = asList(1, 2, 3, 4, 5);
         assertEquals(sumOfElements(numbers),15);
+    }
+
+    @Test
+    public void getKidNameShouldReturnNamesOfAllKidsUnder18yo() {
+        Person sara = new Person("Sara", 4);
+        Person viktor = new Person("Viktor", 40);
+        Person eva = new Person("Eva", 42);
+        Person anna = new Person("Anna", 5);
+        List<Person> collection = asList(sara, eva, viktor, anna);
+        assertThat(getKidNames(collection),hasItems("Sara","Anna"));
+
     }
 
 
