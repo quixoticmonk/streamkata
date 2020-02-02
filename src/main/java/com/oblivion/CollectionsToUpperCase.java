@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.*;
+
 class CollectionsToUpperCase {
 
     static List<String> covertToUpperCase(List<String> input) {
@@ -14,8 +16,7 @@ class CollectionsToUpperCase {
 
         return input.stream()
                 .map(String::toUpperCase)
-                .collect(Collectors.toList())
-                ;
+                .collect(toList());
 
 
     }

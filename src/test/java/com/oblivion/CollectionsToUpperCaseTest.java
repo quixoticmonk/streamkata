@@ -19,8 +19,8 @@ public class CollectionsToUpperCaseTest {
 
     @Test
     public void shouldReturnUpperCase_v2() {
-        List<String> input = asList("My", "name", "is", "Jane", "Doe");
-        List<String> output = asList("MY", "NAME", "IS", "JANE", "DOE");
+        List<String> input = asList("Manu Chandrasekhar");
+        List<String> output = asList("MANU CHANDRASEKHAR");
         assertEquals(covertToUpperCase(input),output);
     }
 
