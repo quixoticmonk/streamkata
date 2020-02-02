@@ -4,10 +4,9 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static com.oblivion.CollectionsTransformation.*;
+import static com.oblivion.CollectionsTransformation.sumOfElements;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class CollectionsTransformationTest {
 
@@ -15,14 +14,14 @@ public class CollectionsTransformationTest {
     public void shouldReturnUpperCase() {
         List<String> input = asList("My", "name", "is", "John", "Doe");
         List<String> output = asList("MY", "NAME", "IS", "JOHN", "DOE");
-        assertEquals(covertToUpperCase(input), output);
+        assertEquals(CollectionsTransformation.covertToUpperCase(input), output);
     }
 
     @Test
     public void shouldReturnUpperCase_v2() {
         List<String> input = asList("Manu Chandrasekhar");
         List<String> output = asList("MANU CHANDRASEKHAR");
-        assertEquals(covertToUpperCase(input), output);
+        assertEquals(CollectionsTransformation.covertToUpperCase(input), output);
     }
 
     @Test
@@ -30,7 +29,7 @@ public class CollectionsTransformationTest {
         List<String> input = asList("My", "name", "is", "John", "Doe");
         List<String> output = asList("My", "is", "Doe");
 
-        assertEquals(convertToListWithElementsOfLength(input), output);
+        assertEquals(CollectionsTransformation.convertToListWithElementsOfLength(input), output);
     }
 
     @Test
@@ -47,7 +46,13 @@ public class CollectionsTransformationTest {
         Person viktor = new Person("Viktor", 40);
         Person eva = new Person("Eva", 42);
         List<Person> collection = asList(sara, eva, viktor);
-        assertEquals(getOldestPerson(collection),eva);
+        assertEquals(CollectionsTransformation.getOldestPerson(collection),eva);
+    }
+
+    @Test
+    public void transformShouldConvertCollectionElementsToUpperCase() {
+        List<Integer> numbers = asList(1, 2, 3, 4, 5);
+        assertEquals(sumOfElements(numbers),15);
     }
 
 
