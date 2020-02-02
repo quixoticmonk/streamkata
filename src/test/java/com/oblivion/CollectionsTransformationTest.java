@@ -4,10 +4,10 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static com.oblivion.CollectionsTransformation.convertToListWithElementsOfLength;
-import static com.oblivion.CollectionsTransformation.covertToUpperCase;
+import static com.oblivion.CollectionsTransformation.*;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class CollectionsTransformationTest {
 
@@ -40,6 +40,15 @@ public class CollectionsTransformationTest {
         assertEquals(CollectionsTransformation.shouldFlattenCollection(input),(output));
     }
 
+
+    @Test
+    public void getOldestPersonShouldReturnOldestPerson() {
+        Person sara = new Person("Sara", 4);
+        Person viktor = new Person("Viktor", 40);
+        Person eva = new Person("Eva", 42);
+        List<Person> collection = asList(sara, eva, viktor);
+        assertEquals(getOldestPerson(collection),eva);
+    }
 
 
 
