@@ -2,16 +2,20 @@ package com.oblivion;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class CollectionsToUpperCase {
+class CollectionsToUpperCase {
 
-    public static List<String> covertToUpperCase(List<String> input) {
+    static List<String> covertToUpperCase(List<String> input) {
 
-        List <String> output = new ArrayList<>();
-        for(String e : input){
-            output.add(e.toUpperCase());
-        }
-        return output;
+        /*List <String> output = new ArrayList<>();
+        input.forEach(e-> output.add(e.toUpperCase()));
+        return output;*/
+
+        return input.stream()
+                .map(String::toUpperCase)
+                .collect(Collectors.toList())
+                ;
 
 
     }
