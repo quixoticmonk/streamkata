@@ -1,14 +1,19 @@
 package com.oblivion;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import static java.util.Arrays.asList;
 
 public class CollectionsToUpperCase {
 
     public static List<String> covertToUpperCase(List<String> input) {
-        List<String > asList = asList("MY", "NAME", "IS", "JOHN", "DOE");
-        return asList;
+
+        List <String> output = new ArrayList<>();
+        for(String e : input){
+            output.add(e.toUpperCase());
+        }
+        return output;
+
+
     }
 
 }
