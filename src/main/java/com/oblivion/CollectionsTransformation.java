@@ -38,17 +38,8 @@ class CollectionsTransformation {
     }
 
     static int sumOfElements(List<Integer> input){
-/*
-       int total =0;
-       for(int n: input){
-           total+=n;
-       }
-       return total;
-*/
-
        return input.stream()
                .reduce(0,(e1,e2)->e1+e2);
-
 
     }
 
